@@ -11,9 +11,12 @@ import member.dto.MemberDTO;
  */
 public abstract class AppBase {
 
-	// 사용자 입력
+	// 사용자 번호 입력
 	protected Scanner sc;
 
+	// text 사용자 정보 입력
+	protected Scanner scLine;
+	
 	// 로그인한 회원
 	protected MemberDTO loginMember;
 
@@ -29,6 +32,7 @@ public abstract class AppBase {
 	// 프로그램 실행용 생성자
 	protected AppBase(MemberDAO dao) {
 		sc = new Scanner(System.in);
+		scLine = new Scanner(System.in);
 		this.dao = dao;
 		isRun = true;
 		isRun();
@@ -60,7 +64,7 @@ public abstract class AppBase {
 
 	protected String getStringData(String message) {
 		System.out.println(message);
-		return sc.next();
+		return scLine.nextLine();	// 한 라인씩 입력받을 수 있도록 수정
 	}
 
 	protected int getNumberData(String message) {

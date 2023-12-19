@@ -6,6 +6,7 @@ import account.dao.AccountDAO;
 import account.dao.pstmt.AccountPSTMTDAOImpl;
 import account.dao.stmt.AccountSTMTDAOImpl;
 import account.dto.AccountDTO;
+import utils.DBUtil;
 
 public class BankApplication {
 	
@@ -14,8 +15,8 @@ public class BankApplication {
 	AccountDAO dao;
 	
 	BankApplication(){
-		dao = new AccountSTMTDAOImpl(); // statement
-		// dao = new AccountPSTMTDAOImpl(); // properties
+		// dao = new AccountSTMTDAOImpl(); // statement
+		dao = new AccountPSTMTDAOImpl(); // properties
 		run();
 	}
 	
@@ -49,6 +50,7 @@ public class BankApplication {
 				// 종료
 				isRun = false;
 				sc.close();
+				DBUtil.close(DBUtil.getConnection());
 			}
 		}
 		System.out.println("프로그램 종료");

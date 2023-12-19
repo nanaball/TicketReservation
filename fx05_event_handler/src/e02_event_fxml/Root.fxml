@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+
+<HBox spacing="20.0" xmlns:fx="http://javafx.com/fxml/1">
+	<!-- TODO Add Nodes -->
+	<children>
+		<Button fx:id="btn1" text="버튼1" id="btn1"/>
+		<Button fx:id="btn2" text="버튼2" />
+		<Button fx:id="btn3" text="버튼3" />
+	</children>
+</HBox>
+

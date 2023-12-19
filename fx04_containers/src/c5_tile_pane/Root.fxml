@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.TilePane?>
+
+<!-- 
+	prefTileHeight="100.0" prefTileWidth="100.0" 
+	내부 자식 요소의 공통 크기 지정
+	orientation="VERTICAL" prefRows="2" 
+	orientation="HORIZONAL" prefColumns="3" 
+	hgap="5.0" vgap="10.0" - 요소 사이의 수평 수직 간격
+ -->
+
+<TilePane hgap="5.0"  orientation="VERTICAL" prefColumns="3" prefRows="2" prefTileHeight="100.0" prefTileWidth="100.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+	<!-- TODO Add Nodes -->
+	<children>
+		<ImageView>
+			<image>
+				<Image url="@images/fruit1.jpg" />
+			</image>
+		</ImageView>
+		<ImageView>
+			<image>
+				<Image url="@images/fruit2.jpg" />
+			</image>
+		</ImageView>
+		<ImageView>
+			<image>
+				<Image url="@images/fruit3.jpg" />
+			</image>
+		</ImageView>
+		<ImageView>
+			<image>
+				<Image url="@images/fruit4.jpg" />
+			</image>
+		</ImageView>
+		<ImageView>
+			<image>
+				<Image url="@images/fruit5.jpg" />
+			</image>
+		</ImageView>
+		<ImageView>
+			<image>
+				<Image url="@images/fruit6.jpg" />
+			</image>
+		</ImageView>
+		<ImageView>
+			<image>
+				<Image url="@images/fruit7.jpg" />
+			</image>
+		</ImageView>
+		<ImageView>
+			<image>
+				<Image url="@images/fruit8.jpg" />
+			</image>
+		</ImageView>
+	</children>
+</TilePane>

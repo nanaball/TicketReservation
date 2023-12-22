@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.media.MediaView?>
+
+<AnchorPane prefHeight="340.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4_media_view.MediaController">
+   <children>
+      <StackPane layoutX="14.0" layoutY="14.0" prefHeight="230.0" prefWidth="400.0">
+         <children>
+            <ImageView fitHeight="230.0" fitWidth="400.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../media/audio.png" />
+               </image>
+            </ImageView>
+            <MediaView fx:id="mediaView" fitHeight="230.0" fitWidth="400.0" preserveRatio="false" />
+         </children>
+      </StackPane>
+      <Button fx:id="btnPlay" layoutX="425.0" layoutY="14.0" prefHeight="22.0" prefWidth="170.0" text="PLAY" />
+      <Button fx:id="btnPause" layoutX="425.0" layoutY="48.0" prefHeight="22.0" prefWidth="170.0" text="PAUSE" />
+      <Button fx:id="btnStop" layoutX="425.0" layoutY="81.0" prefHeight="22.0" prefWidth="170.0" text="STOP" />
+      <Separator layoutX="425.0" layoutY="120.0" prefHeight="1.0" prefWidth="170.0" />
+      <Button layoutX="438.0" layoutY="143.0" onAction="#changeResource" text="영상1" />
+      <Button layoutX="534.0" layoutY="143.0" onAction="#changeResource" text="영상2" />
+      <Button layoutX="438.0" layoutY="193.0" onAction="#changeResource" text="음악1" />
+      <Button layoutX="534.0" layoutY="193.0" onAction="#changeResource" text="음악2" />
+      <Separator layoutX="425.0" layoutY="243.0" prefHeight="1.0" prefWidth="170.0" />
+      <ProgressBar fx:id="progressBar" layoutX="14.0" layoutY="256.0" prefHeight="18.0" prefWidth="400.0" progress="0.0" />
+      <Label fx:id="lblTime" layoutX="189.0" layoutY="281.0" text="0/260 sec" />
+      <Slider fx:id="sliderPlay" blockIncrement="0.1" layoutX="14.0" layoutY="303.0" majorTickUnit="0.25" max="1.0" prefHeight="14.0" prefWidth="400.0" showTickLabels="true" showTickMarks="true" />
+      <Slider fx:id="sliderVolume" blockIncrement="0.1" layoutX="453.0" layoutY="255.0" max="1.0" orientation="VERTICAL" prefHeight="66.0" prefWidth="14.0" />
+      <Label layoutX="436.0" layoutY="330.0" text="소리조절" />
+      <ProgressIndicator fx:id="indicator" layoutX="546.0" layoutY="276.0" progress="0.0" />
+   </children>
+</AnchorPane>

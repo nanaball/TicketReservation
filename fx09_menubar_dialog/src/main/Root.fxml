@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.*?>
+<?import javafx.collections.*?>
+<?import java.lang.*?>
+<?import javafx.scene.input.KeyCodeCombination?>
+
+
+
+<BorderPane prefHeight="200.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="main.RootController">
+   <top>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+              	<!-- 
+              		text : 이름 _(언더바) 언더바 뒤에 있는 텍스트의 글자와 알트키를 누르면 해당 메뉴로 가는 단축키 
+              		ex) alt _ f -> 파일 메뉴 볼 수 있음 
+              		mnemonicParsing="false" 면 해당 기능 사용 불가, mnemonicParsing="true" 면 해당 기능 사용
+              	 -->
+                <Menu mnemonicParsing="false" text="_File">
+                  <items>
+                    <MenuItem onAction="#handleNew" text="새로만들기" >
+                    	<accelerator>
+                    		<!-- 
+                    			meta : windows - windows function, 	mac : meta
+                    			shortcut : windows,  linux : ctrl 	mac :meta 
+                    			down : 키보드 누르기	up : 키보드 안누르기 
+                    		-->
+                    		<KeyCodeCombination alt="DOWN" code="N" control="UP" meta="UP" shift="DOWN" shortcut="UP"/>
+                    	</accelerator>
+                    	<graphic>
+                    		<ImageView>
+                    			<image>
+                    				<Image url="@../icons/new.png"/>
+                    			</image>
+                    		</ImageView>
+                    	</graphic>
+                    </MenuItem>
+                    <MenuItem onAction="#handleOpen" text="열기" >
+                    	<accelerator>
+							<KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>                    	</accelerator>
+                    	<graphic>
+                    		<ImageView>
+                    			<image>
+                    				<Image url="@../icons/open.png"/>
+                    			</image>
+                    		</ImageView>
+                    	</graphic>
+                    </MenuItem>
+                    <MenuItem onAction="#handleSave" text="저장" >
+                    	<accelerator>
+                    		<KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                    	</accelerator>
+                    	<graphic>
+                    		<ImageView>
+                    			<image>
+                    				<Image url="@../icons/save.png"/>
+                    			</image>
+                    		</ImageView>
+                    	</graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem onAction="#handleClose" text="닫기" >
+                    </MenuItem>
+                    
+                    <Menu text = "추가메뉴">
+                    	<items>
+                    		<MenuItem text="고등어"/>
+                    		<MenuItem text="갈치"/>
+                    		<MenuItem text="참치"/>
+                    		<MenuItem text="연어"/>
+                    	</items>
+                    </Menu>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="편집">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="이동">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+                <Button onAction="#handleNew">
+                	<graphic>
+                		<ImageView>
+                			<image>
+                				<Image url="@../icons/new.png"/>
+                			</image>
+                		</ImageView>
+                	</graphic>
+                </Button>
+                <Button onAction="#handleOpen" >
+                	<graphic>
+                		<ImageView>
+                			<image>
+                				<Image url="@../icons/open.png"/>
+                			</image>
+                		</ImageView>
+                	</graphic>
+                </Button>
+                <Button onAction="#handleSave" >
+                	<graphic>
+                		<ImageView>
+                			<image>
+                				<Image url="@../icons/save.png"/>
+                			</image>
+                		</ImageView>
+                	</graphic>
+                </Button>
+                <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="선택" >
+                	<items>
+                		<FXCollections fx:factory="observableArrayList">
+                  			<String fx:value="directory chooser"/>
+                  			<String fx:value="file chooser"/>
+                  			<String fx:value="popup"/>
+                  			<String fx:value="Custom Window"/>
+                  		</FXCollections>
+                	</items>
+                </ComboBox>
+              </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

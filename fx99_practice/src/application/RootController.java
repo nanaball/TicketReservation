@@ -16,6 +16,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class RootController implements Initializable{
@@ -23,8 +24,15 @@ public class RootController implements Initializable{
 	@FXML private Button btnAdd;
 	@FXML private Button btnLine;
 	@FXML private TableView<score> tableView;
-	@FXML private PieChart chartPie;
-	@FXML private BarChart<Integer, String> chartBar;
+	@FXML private PieChart Pie;
+	@FXML private BarChart<Integer, String> Bar;
+	@FXML private Button btnSave;
+	@FXML private Button btnCancel;
+	@FXML private TextField txtName;
+	@FXML private TextField txtKor;
+	@FXML private TextField txtMath;
+	@FXML private TextField txtEng;
+	
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -74,22 +82,20 @@ public class RootController implements Initializable{
 		
 		
 		// <no.2> TableView Item 선택 시 학생의 점수 %를 보여주는 Pie Chart가 포함된 Custom Dialog를 작성하시오.
-		Thread t = new Thread(()->{
 
 		tableView.setOnMousePressed(e -> {
-			chartPie.setTitle("파이그래프");
 			
 			ObservableList<PieChart.Data> listA = FXCollections.observableArrayList();
 			
+			// listA.add(new PieChart.Data(tableView<score>, scoreA));
 			listA.add(new PieChart.Data("국어", 40));	// DATA명, 적용될 수치(double)
 			PieChart.Data data = new PieChart.Data("수학", 60);
 			listA.add(data);
 			listA.add(new PieChart.Data("영어", 80));
 			
-			chartPie.setData(listA);	// 360도 상대적 비율에 따라 자동으로 표시됨 
+			Pie.setData(listA);	
 		});
 		
-		});
 		
 		
 		
@@ -107,12 +113,12 @@ public class RootController implements Initializable{
 			ObservableList<XYChart.Data<Integer, String>> listBar = FXCollections.observableArrayList();
 			listBar.add(new XYChart.Data<>(40, "홍길동"));		
 			
-			
+			Bar.getData().add(allscore);
+
 			allscore.setData(listBar);
 			
 			
 			
-			chartBar.getData().add(allscore);
 			
 		});	
 		

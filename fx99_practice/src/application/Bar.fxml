@@ -3,17 +3,14 @@
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.layout.HBox?>
 
 
 <HBox 
-fx:controller="application.RootController"  
-
+fx:controller="application.RootController"
 xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
    <children>
-      <PieChart fx:id="chartPie" />
-      <BarChart fx:id="chartBar">
+      <BarChart fx:id="Bar">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>

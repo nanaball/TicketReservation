@@ -24,6 +24,7 @@ public class ChartMain extends Application {
 		
 		
 	}
+	
 
 	public static void main(String[] args) {
 		launch(args);

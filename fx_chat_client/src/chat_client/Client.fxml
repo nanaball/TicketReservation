@@ -9,8 +9,12 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
+<!-- 
+@https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&amp;display=swap,
+ -->
+ 
 <BorderPane 
+stylesheets="@application.css"
 xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
 fx:controller="chat_client.ClientController">
    <center>

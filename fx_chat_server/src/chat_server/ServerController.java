@@ -28,7 +28,9 @@ public class ServerController implements Initializable{
 	// 운영제제에서 요청한 포트로 프로세스를 할당받아 client socket 연결 관리를 할 class
 	ServerSocket server;
 	// 연결된 client의 닉네임을 key값으로 서버에서 발신할 정보를 value로 저장하는 map객체 
-	// <Client ID, socket 출력 스트림>
+	// <Client ID, socket 출력 스트림> 
+	// 스레드가 계속 확장되는데 테이블 쓰면서 클라이언트 정보 저장, 동시에 전달할때 멀티스레드에서는 기존 스레드 동기화가 되어야하기 때문에 
+	// map은 동기화가 되지 않아 멀티스레드에서 안전하지 않음 
 	Hashtable<String, PrintWriter> clients;
 	
 	@Override
@@ -64,6 +66,8 @@ public class ServerController implements Initializable{
 			}
 		}
 		
+		// parseInt - 기본타입으로 변환
+		// valueof - 래퍼(wrapper) 클래스로 변환 
 		int portNumber = Integer.parseInt(port);
 		// 해당 포트 번호를 할당 받아서 client에 연결 요청을 수락할 수 있도록 serverSocket 생성 
 		// 1023 < portNumber || 65535 > portNumber
@@ -110,6 +114,14 @@ public class ServerController implements Initializable{
 	
 	// 서버 종료 자원해제 담당
 	public void stopServer() {
+		
+		if(clients != null && !clients.isEmpty()) {
+			for(PrintWriter p : clients.values()) {
+				if(p != null) p.close();
+			}
+		}
+		clients.clear();
+		
 		
 		if(server != null && !server.isClosed()) {
 			try {

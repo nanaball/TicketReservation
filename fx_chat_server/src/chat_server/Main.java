@@ -18,6 +18,11 @@ public class Main extends Application {
 			
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("CHAT_SERVER");
+			primaryStage.setOnCloseRequest(e->{
+				// 무대의 닫기 이벤트 == alt + F4
+				ServerController controller = loader.getController();
+				controller.stopServer();
+			});
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

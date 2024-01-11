@@ -246,6 +246,7 @@ public class PostController implements Initializable, Receivable {
 
 			tableView.getColumns().add(tc);			
 		}
+		tableView.refresh();
 		list.clear();
 		tableView.setItems(list);
 
@@ -307,6 +308,7 @@ public class PostController implements Initializable, Receivable {
 		System.out.println("PostController receive Data: " + message);
 
 		tableView.refresh();
+		list.clear();
 		tableView.setItems(list);
 
 		String[] row = message.split("\\|");

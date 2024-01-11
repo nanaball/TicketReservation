@@ -27,7 +27,10 @@
                   <Font name="Yj TEUNTEUN Bold" size="16.0" />
                </font>
             </Label>
-            <ImageView fx:id="musicalImg" fitHeight="260.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="musicalImg" fitHeight="260.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin></ImageView>
             <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets bottom="10.0" />
@@ -67,6 +70,9 @@
                <font>
                   <Font name="Yj TEUNTEUN Bold" size="24.0" />
                </font>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
             </Label>
 
             <Label fx:id="selectMusical" style="-fx-background-color: yellow;" textAlignment="CENTER">

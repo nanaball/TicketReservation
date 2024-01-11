@@ -295,12 +295,7 @@ public class LoginController implements Initializable, Receivable {
 		return userID;
 	}
 	
-	
-	
-	
-	
-	
-	// ArrayList<String> LogId = new ArrayList<>();
+
 }
 
 

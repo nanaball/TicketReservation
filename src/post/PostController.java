@@ -244,11 +244,10 @@ public class PostController implements Initializable, Receivable {
 			tc.setStyle("-fx-alignment:center; -fx-text-fill:black;");
 			// tc.setPrefWidth(double value);
 
-			tableView.getColumns().add(tc);
-
-			list.clear();
+			tableView.getColumns().add(tc);			
 		}
-	
+		list.clear();
+		tableView.setItems(list);
 
 
 
@@ -308,7 +307,6 @@ public class PostController implements Initializable, Receivable {
 		System.out.println("PostController receive Data: " + message);
 
 		tableView.refresh();
-		list.clear();
 		tableView.setItems(list);
 
 		String[] row = message.split("\\|");
@@ -324,16 +322,17 @@ public class PostController implements Initializable, Receivable {
 		if (secondOrder.equals("0")) {
 			String thirdOrder = row[2];
 			// 3|0 == musicalInfo
+			
 			if (thirdOrder.equals("0")) {
 				// 뮤지컬 정보 있음 tableView에 출력
 				// 3|0|0| ~~~~~~~ 뮤지컬 목록 나열
 				// 3|0|0|2!2024-01-08!23:11:10!한글2!^3!2024-01-08!23:23:10!한글3!^
 				String musicalList = row[3];
-
+				
 				for (String data : musicalList.split("\\^")) {
 					System.out.println(data);
 					if (data.equals("")) {
-						continue;
+						continue;						
 					}
 					String[] castData = data.split("\\!");
 					list.add(new CastVO(Integer.parseInt(castData[0]), castData[1], castData[2], castData[3],

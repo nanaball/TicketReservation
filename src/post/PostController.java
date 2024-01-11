@@ -63,6 +63,10 @@ public class PostController implements Initializable, Receivable {
 	// 현재의 월
 	private LocalDate now;
 
+	// 선택된 버튼
+	public Button selectedButton;
+	public String btnStyle;
+
 	// 이번달 달력을 표시
 	@FXML
 	void TodayClick(ActionEvent e) {
@@ -193,12 +197,23 @@ public class PostController implements Initializable, Receivable {
 		System.out.println(date.getDayOfMonth()); // 오늘 일자
 		System.out.println(selectDate.getDayOfMonth()); // 선택한 일자
 
+		// 클릭한 버튼 색상 변경
+		if (selectedButton != null && btnStyle != null) {
+			selectedButton.setStyle(btnStyle);
+		}
+		selectedButton = btn;
+		btnStyle = btn.getStyle();
+		btn.setStyle(
+				"-fx-background-color:orange; -fx-background-radius:45; -fx-text-fill:white; -fx-font-weight:bolder; ");
+		btn.setDefaultButton(false);
+
 		// 예매일 관련 안내
 		if ((date.getDayOfYear() + 7) < selectDate.getDayOfYear()) {
+			list.clear();
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setHeaderText("해당일자는 예약이 불가합니다.");
 			alert.setContentText("예매는 공연일 일주일 전 오후 2시부터 가능합니다.");
-			alert.showAndWait();
+			alert.showAndWait();			
 		} else {
 			main.Main.thread.sendData("3|0|" + selectDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 		}
@@ -231,9 +246,13 @@ public class PostController implements Initializable, Receivable {
 
 			tableView.getColumns().add(tc);
 
+			list.clear();
 		}
-		tableView.setItems(list);
+	
 
+
+
+		// 테이블 뷰에서 캐스팅 정보 선택
 		tableView.getSelectionModel().selectedItemProperty().addListener((t, o, n) -> {
 			Main.castVO = n;
 			System.out.println(Main.castVO + "--------");
@@ -287,8 +306,10 @@ public class PostController implements Initializable, Receivable {
 	public void receiveData(String message) {
 		// TODO receive된 데이터로 결과 처리
 		System.out.println("PostController receive Data: " + message);
-		list.clear();
+
 		tableView.refresh();
+		list.clear();
+		tableView.setItems(list);
 
 		String[] row = message.split("\\|");
 		String firstOrder = row[0]; // == 3
@@ -318,10 +339,10 @@ public class PostController implements Initializable, Receivable {
 					list.add(new CastVO(Integer.parseInt(castData[0]), castData[1], castData[2], castData[3],
 							castData[4]));
 				}
-			} // else {// 해당 되는 날짜에 뮤지컬 정보 없음.} // tableView에 목록 미출력
+			}
+			// else {// 해당 되는 날짜에 뮤지컬 정보 없음.} // tableView에 목록 미출력
 		} else if (secondOrder.equals("1")) {
-			// 추가 기능...
+			// 3|1 추가 기능...
 		}
 	}
-
 }

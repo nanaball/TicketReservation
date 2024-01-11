@@ -16,10 +16,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.input.KeyCode;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import main.Main;
@@ -33,15 +33,24 @@ public class LoginController implements Initializable, Receivable {
 	private Button btnLogin, btnMember;
 	
 	@FXML 
-	private CheckBox rememberMe;
+	                 //아이디기억,   자동로그인
+	private CheckBox rememberMe, autoLogin;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Main.thread.loginController = this;
 		
-		String userID = rememberMe();
+		// 아이디 저장
+		String userID = readUserIdWithFile();
 		if(userID != null) {
 			txtId.setText(userID);
+		}
+		
+		
+		// 자동 로그인 체크
+		MemberVO autoLoginMember = rememberMeReadMemberInfo();
+		if(autoLoginMember != null) {
+			Main.thread.sendData("0|0|"+autoLoginMember.getUserID()+","+autoLoginMember.getPassword());
 		}
 		
 		Platform.runLater(() -> {
@@ -134,8 +143,17 @@ public class LoginController implements Initializable, Receivable {
 			Main.loginMember = new MemberVO(loginMember[0],loginMember[1],loginMember[2],loginMember[3]);
 			
 			Platform.runLater(()->{
+				
+				// 아이디 저장 체크
 				if(rememberMe.isSelected()) {
 					rememberUserId(Main.loginMember.getUserID());
+				}
+				
+				// 자동 로그인 체크
+				if(autoLogin.isSelected()){
+					// 로그인에 필요한 비밀번호도 저장
+					// 로그인에 필요한 아이디 및 비밀번호를 사용자 PC 파일을 생성하여 저장
+					rememberMemberInfo();
 				}
 				
 				// 로그인 무대 종료
@@ -166,8 +184,72 @@ public class LoginController implements Initializable, Receivable {
 		} // end if
 	} // end receiveData
 	
+	//자동 로그인저장용 파일 생성 및 아이디 비밀번호 저장
+	public void rememberMemberInfo() {
+		// 자동로그인 요청한 사용자의 아이디와 비밀번호
+		String userId = Main.loginMember.getUserID();
+		String password = Main.loginMember.getPassword();
+		
+		try {
+			File dir = new File("/member");
+			if(!dir.exists()) {
+				dir.mkdirs();
+			}
+			File file = new File(dir,"rememberMemberInfo.txt");
+			FileOutputStream fos = new FileOutputStream(file);
+			fos.write(userId.getBytes());
+			fos.write(".".getBytes());
+			fos.write(password.getBytes());
+			fos.flush();
+			fos.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
-	// 사용자 컴퓨터에 txt파일로 사용자 아이디 저장
+	// 자동 로그인 으로 생성된 파일과 정보가 존재 하는지 확인
+	public MemberVO rememberMeReadMemberInfo() {
+		
+		MemberVO vo = null;
+		File dir = new File("/member");
+		if(!dir.exists()) {
+			dir.mkdirs();
+		}
+		File file = new File(dir,"rememberMemberInfo.txt");
+		if(!dir.exists() || !file.exists()) {
+			return null;
+		}
+		
+		String memberInfo = null;
+		try {
+			FileInputStream fis = new FileInputStream(file);
+			// 연결된 파일의 읽을 수 있는 byte 개수 만큼 배열 생성
+			byte[] bytes = new byte[fis.available()];
+			fis.read(bytes);
+			if(bytes.length > 0) {
+				memberInfo = new String(bytes);
+				String[] results = memberInfo.split("\\.");
+				// 아이디.비밀번호
+				//    0     1 
+				// [아이디][비밀번호]
+				if(results.length == 2) {
+					vo = new MemberVO(results[0],results[1]);
+				}
+			}
+			fis.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		// 자동로그인으로 저장된 아이디와 비밀번호 정보를 저장하고 있는 MemberVO 객체
+		return vo;
+	}
+	
+	
+	
+	// 아이디 저장
+	// (자동로그인만들기) 사용자 컴퓨터에 txt파일로 사용자 아이디 저장
 	public void rememberUserId(String userId) {
 		try {
 			File dir = new File("/member");
@@ -188,8 +270,9 @@ public class LoginController implements Initializable, Receivable {
 		}
 	}
 	
+	// 아이디 저장
 	// 사용자 컴퓨터에 txt파일로 저장된 사용자 ID 읽어오기
-	public String rememberMe() {
+	public String readUserIdWithFile() {
 		File dir = new File("/member");
 		File file = new File(dir,"rememberMe.txt");
 		if(!dir.exists() || !file.exists()) {
@@ -205,6 +288,7 @@ public class LoginController implements Initializable, Receivable {
 			if(bytes.length > 0) {
 				userID = new String(bytes);
 			}
+			fis.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -212,6 +296,11 @@ public class LoginController implements Initializable, Receivable {
 	}
 	
 	
+	
+	
+	
+	
+	// ArrayList<String> LogId = new ArrayList<>();
 }
 
 

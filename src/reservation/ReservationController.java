@@ -147,8 +147,9 @@ public class ReservationController implements Initializable, Receivable {
 
 		// 좌석 정보 노출
 		ObservableList<SeatVO> list = FXCollections.observableArrayList();
-		SeatVO vips = new SeatVO("VIP 좌석", "100000원");
-		SeatVO order = new SeatVO("일반좌석", "30000원");
+		SeatVO vips = new SeatVO("VIP 좌석", "100,000원");
+		SeatVO order = new SeatVO("일반좌석", "30,000원");
+
 		
 		list.add(vips);
 		list.add(order);

@@ -19,15 +19,15 @@
    <right>
       <VBox alignment="CENTER" prefHeight="600.0" prefWidth="272.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="228.0" text="원하시는 좌석을 선택해주세요"  textAlignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="228.0" text="원하시는 좌석을 선택해주세요" textAlignment="CENTER">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
                <font>
-                  <Font name="Bell MT" size="15.0" />
+                  <Font name="Yj TEUNTEUN Bold" size="16.0" />
                </font>
             </Label>
-            <ImageView fx:id="musicalImg" fitHeight="200.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="musicalImg" fitHeight="260.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
             <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets bottom="10.0" />
@@ -38,38 +38,47 @@
                </columns>
             </TableView>
             <Separator prefHeight="3.0" prefWidth="358.0" />
-            <Label text="선택된 좌석" />
+            <Label text="선택된 좌석">
+               <font>
+                  <Font name="Consolas" size="15.0" />
+               </font></Label>
             <TextField fx:id="selectS" alignment="TOP_CENTER" editable="false" prefHeight="21.0" prefWidth="252.0" promptText="선택된 좌석">
                <font>
-                  <Font size="17.0" />
+                  <Font name="HYHeadLine-Medium" size="17.0" />
                </font></TextField>
             <Button fx:id="btnSc" mnemonicParsing="false" prefHeight="42.0" prefWidth="249.0" style="-fx-background-color: f7c5aa; -fx-background-radius: 30;" text="좌석 선택 완료">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
                <font>
-                  <Font size="17.0" />
+                  <Font name="Yj TEUNTEUN Bold" size="17.0" />
                </font>
             </Button>
          </children>
          <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" top="-30.0" />
          </padding>
       </VBox>
    </right>
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="57.0" prefWidth="109.0" text="좌석 선택" style="-fx-Text-Fill : #FFBBFF;">
+            <Label contentDisplay="CENTER" prefHeight="57.0" prefWidth="109.0" style="-fx-Text-Fill: black;" text="좌석 선택">
                <font>
-                  <Font size="24.0" name="Agency FB" />
+                  <Font name="Yj TEUNTEUN Bold" size="24.0" />
                </font>
             </Label>
 
             <Label fx:id="selectMusical" style="-fx-background-color: yellow;" textAlignment="CENTER">
                <font>
-                  <Font size="22.0" />
+                  <Font name="Yj TEUNTEUN Bold" size="22.0" />
                </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
             </Label>
 
             <Label fx:id="selectDate" alignment="CENTER">
@@ -92,6 +101,9 @@
                <HBox.margin>
                   <Insets left="100.0" />
                </HBox.margin>
+               <font>
+                  <Font name="Yj TEUNTEUN Bold" size="13.0" />
+               </font>
             </Button>
          </children>
          <padding>

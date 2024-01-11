@@ -73,26 +73,34 @@ public class ReservationController implements Initializable, Receivable {
 		selectMusical.setText(Main.castVO.getMusicalNa());
 		Main.thread.sendData("1|"+Main.castVO.getMusicalNa()+","+Main.castVO.getDate()+","+Main.castVO.getTime());
 
-/*		
+		
 		// 레미제라블
 		Image image = new Image(
-				getClass().getResource("img/las.jpg").toString()
+				getClass().getResource("/img/les.gif").toString()
 			);
 		// 노트르담드파리
 		Image image1 = new Image(
-				getClass().getResource("img/PARIS.jpg").toString()
+				getClass().getResource("/img/PARIS.gif").toString()
 			);
 		// 레베카
 		Image image2 = new Image(
-				getClass().getResource("img/rebecca.jpg").toString()
+				getClass().getResource("/img/rebecca.gif").toString()
 			);
 		
-		musicalImg.setImage(image);
-*/
 		
+		switch(Main.castVO.getMusicalNa()) {
+		case "레미제라블" :
+			musicalImg.setImage(image);
+			break;
+		case "노트르담드파리" :
+			musicalImg.setImage(image1);
+			break;
+		case "레베카" :
+			musicalImg.setImage(image2);
+			break;
+		}
 		
-		
-// 뒤로가기		
+			
 		btnBack.setOnAction((e)->{
 			selectDate = null;
 			selectTime = null;

@@ -58,9 +58,8 @@ public class PayDoneController implements Initializable, Receivable  {
 		});
 		
 		
-		// 결제 완료 창의 확인 버튼을 누르면 모든 창이 꺼짐
+		// 결제 완료 창의 확인 버튼을 누르면 포스터 화면을 제외한 화면이 꺼짐
 		btnExit.setOnAction((e)->{
-//			System.exit(0);
 			// PayController Stage
 			payStage.close();
 			// payDoneController Stage

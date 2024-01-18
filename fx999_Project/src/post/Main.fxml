@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox prefHeight="700.0" prefWidth="1200.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="51.0" prefWidth="399.0" text="뮤지컬 &lt;레미제라블&gt;">
+               <font>
+                  <Font name="Castellar" size="40.0" />
+               </font>
+            </Label>
+            <!--  포스트 이미지 완 -->
+            <ImageView fx:id="ImgPost" fitHeight="1500.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/post.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <Pane prefHeight="200.0" prefWidth="250.0">
+         <children>
+            <Label layoutX="20.0" layoutY="98.0" text="장소">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="129.0" text="공연기간">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="163.0" text="공연시간">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="197.0" text="관람연령">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="228.0" text="가격">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="92.0" layoutY="98.0" text="세종문화회관">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="92.0" layoutY="129.0" text="2023.11.30 - 2024.03.10">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="92.0" layoutY="163.0" text="180분">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="92.0" layoutY="197.0" text="초등학생 이상 관람가">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="92.0" layoutY="228.0" text="180,000원">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="377.0" text="줄거리">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Text layoutX="23.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="가난으로 인해 조카들이 굶게 되자" />
+            <Text layoutX="25.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="그들을 위해 빵을 훔치다 걸려 5년을" />
+            <Text layoutX="25.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="받은 장 발장은 구형도중 시도한 4번의" />
+            <Text layoutX="25.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="탈옥으로 인해 5년+14년, 총합 19년을" />
+            <Text layoutX="25.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="살다가 형기를 다 채우고 세상에" />
+            <Text layoutX="25.0" layoutY="563.0" strokeType="OUTSIDE" strokeWidth="0.0" text="나오게 된다" />
+         </children>
+      </Pane>
+      <Pane>
+         <children>
+            <BorderPane prefWidth="300.0">
+               <center>
+                  <GridPane fx:id="calendarPane" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <!-- <VBox mouseTransparent="true" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox fx:id="hbox1" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn1" alignment="CENTER" mnemonicParsing="false" style="-fx-text-fill: RED;" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                           <children>
+                              <HBox fx:id="hbox2" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn2" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                           <children>
+                              <HBox fx:id="hbox3" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn3" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
+                           <children>
+                              <HBox fx:id="hbox4" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn4" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4">
+                           <children>
+                              <HBox fx:id="hbox5" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn5" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5">
+                           <children>
+                              <HBox fx:id="hbox6" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn6" alignment="CENTER" mnemonicParsing="false" prefHeight="21.0" prefWidth="43.0" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6">
+                           <children>
+                              <HBox fx:id="hbox7" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn7" alignment="CENTER" mnemonicParsing="false" style="-fx-text-fill: BLUE;" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                           <children>
+                              <HBox fx:id="hbox8" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn8" alignment="CENTER" mnemonicParsing="false" style="-fx-text-fill: RED;" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <HBox fx:id="hbox9" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn9" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <children>
+                              <HBox fx:id="hbox10" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn10" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <children>
+                              <HBox fx:id="hbox11" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn11" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <children>
+                              <HBox fx:id="hbox12" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn12" alignment="CENTER" mnemonicParsing="false" prefHeight="21.0" prefWidth="43.0" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                           <children>
+                              <HBox fx:id="hbox13" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn13" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                           <children>
+                              <HBox fx:id="hbox14" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn14" alignment="CENTER" mnemonicParsing="false" style="-fx-text-fill: BLUE;" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                           <children>
+                              <HBox fx:id="hbox15" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn15" alignment="CENTER" mnemonicParsing="false" style="-fx-text-fill: RED;" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <HBox fx:id="hbox16" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn16" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <children>
+                              <HBox fx:id="hbox17" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn17" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <children>
+                              <HBox fx:id="hbox18" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn18" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <children>
+                              <HBox fx:id="hbox19" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn19" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                           <children>
+                              <HBox fx:id="hbox20" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn20" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                           <children>
+                              <HBox fx:id="hbox21" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn21" alignment="CENTER" mnemonicParsing="false" style="-fx-text-fill: BLUE;" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+                           <children>
+                              <HBox fx:id="hbox22" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn22" alignment="CENTER" mnemonicParsing="false" style="-fx-text-fill: RED;" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <HBox fx:id="hbox23" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn23" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <children>
+                              <HBox fx:id="hbox24" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn24" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <children>
+                              <HBox fx:id="hbox25" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn25" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <children>
+                              <HBox fx:id="hbox26" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn26" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                           <children>
+                              <HBox fx:id="hbox27" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn27" alignment="CENTER" mnemonicParsing="false" prefHeight="21.0" prefWidth="43.0" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                           <children>
+                              <HBox fx:id="hbox28" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn28" alignment="CENTER" mnemonicParsing="false" style="-fx-text-fill: BLUE;" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
+                           <children>
+                              <HBox fx:id="hbox29" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn29" alignment="CENTER" mnemonicParsing="false" style="-fx-text-fill: RED;" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <HBox fx:id="hbox30" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn30" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <children>
+                              <HBox fx:id="hbox31" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn31" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                           <children>
+                              <HBox fx:id="hbox32" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn32" alignment="CENTER" mnemonicParsing="false" prefHeight="21.0" prefWidth="43.0" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                           <children>
+                              <HBox fx:id="hbox33" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn33" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                           <children>
+                              <HBox fx:id="hbox34" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn34" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                           <children>
+                              <HBox fx:id="hbox35" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn35" alignment="CENTER" mnemonicParsing="false" style="-fx-text-fill: BLUE;" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="5">
+                           <children>
+                              <HBox fx:id="hbox36" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn36" alignment="CENTER" mnemonicParsing="false" style="-fx-text-fill: RED;" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <children>
+                              <HBox fx:id="hbox37" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn37" alignment="CENTER" mnemonicParsing="false" prefHeight="21.0" prefWidth="43.0" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <children>
+                              <HBox fx:id="hbox38" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn38" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                           <children>
+                              <HBox fx:id="hbox39" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn39" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                           <children>
+                              <HBox fx:id="hbox40" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn40" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                           <children>
+                              <HBox fx:id="hbox41" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn41" alignment="CENTER" mnemonicParsing="false" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                           <children>
+                              <HBox fx:id="hbox42" prefHeight="100.0" prefWidth="200.0" />
+                              <Button fx:id="btn42" alignment="CENTER" mnemonicParsing="false" style="-fx-text-fill: BLUE;" text="Button" />
+                           </children>
+                        </VBox>
+                   -->
+                     </children>
+                  </GridPane>
+               </center>
+               <top>
+                  <VBox prefWidth="100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="btnBMonth" mnemonicParsing="false" onAction="#BMonthClick" text="&lt;">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btnToday" mnemonicParsing="false" onAction="#TodayClick" text="Today" />
+                              <Button fx:id="btnNMonth" mnemonicParsing="false" onAction="#NMonthClick" text="&gt;">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="42.0" style="-fx-text-fill: red;" text="일" textAlignment="CENTER" textFill="#f20a0a" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="42.0" text="월" textAlignment="CENTER" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="42.0" text="화" textAlignment="CENTER" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="42.0" text="수" textAlignment="CENTER" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="42.0" text="목" textAlignment="CENTER" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="42.0" text="금" textAlignment="CENTER" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="42.0" style="-fx-text-fill: blue;" text="토" textAlignment="CENTER" textFill="#4009cd" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </top>
+            </BorderPane>
+            <Button fx:id="btnRe" alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="614.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="예매하기" textAlignment="CENTER">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <TableView fx:id="tableView" layoutX="-1.0" layoutY="285.0" prefHeight="300.0" prefWidth="502.0" />
+         </children>
+      </Pane>
+      <VBox spacing="10.0" />
+   </children>
+</HBox>

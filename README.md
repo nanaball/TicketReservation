@@ -1,6 +1,8 @@
 ##  뮤지컬 티켓 예매 프로그램 
 Java와 javafx를 통해 뮤지컬 티켓 예매 프로그램 구현
 
+<br/>
+<br/>
 
 ### 개발환경
 - JAVA 17
@@ -17,7 +19,7 @@ Java와 javafx를 통해 뮤지컬 티켓 예매 프로그램 구현
     <th>팀장</th><th>팀원</th><th>팀원</th><th>팀원</th>
   </tr>
   <tr align="center">
-    <td> <a href="https://github.com/nanaball/TicketReservation">엄수</a></td>
+    <td> <a href="https://github.com/nanaball/TicketReservation">엄수연</a></td>
     <td> <a href="https://github.com/qwerdf1133/ticket-project-fork">박종현</a> </td>
     <td> <a href="https://github.com/jinseong-1/ticket">박진성</a> </td>
     <td> <a href="#">정애란</a> </td>
@@ -28,41 +30,16 @@ Java와 javafx를 통해 뮤지컬 티켓 예매 프로그램 구현
 </table>
 
 
-### 역할 분담
-한상민
-
-회원관리 페이지 및 DAO 구현.
-
-사용자 회원 관련 페이지 및 DAO 구현.
-
-이하늘
-
-전체적인 디자인.
-
-메인 페이지 구현.
-
-영화 정보 관련 사용자 페이지 및 DAO 구현.
-
-영화 관리 페이지 및 DAO 일부 구현.
-
-회원 관리 DAO 일부 구현.
-
-진재혁
-
-영화 스케줄, 예매 관련 페이지 및 DAO 구현.
-
-DB 작성.
-
-이학민
-
-영화 관리 페이지 및 DAO 구현.
-이상철
-
-회원관리, 로그인 페이지 및 DAO 구현.
+<br/>
+<hr/>
 
 ### HISTORY 
-- 20240105_work start
-
+- 231229 : 주제선정
+- 240102-240110 : 화면 및 기능구현
+- 240104 : client, server 구축
+- 240105 : DB연결
+- 240106-240110 : 통합 및 추가기능 제작
+- 240111-240112 : 오류 수정 및 구현 마무리 
 
 <HR/>
 <BR/>

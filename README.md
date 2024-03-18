@@ -46,6 +46,13 @@ Java와 javafx를 통해 뮤지컬 티켓 예매 프로그램 구현
 
 ### 스토리보드 
 
+![그림1](https://github.com/nanaball/TicketReservation/assets/145513701/8fb24c9f-8a97-453d-9e9a-1f1885d831ae)
+
+### 데이터베이스
+![그림2](https://github.com/nanaball/TicketReservation/assets/145513701/94005439-2576-44d5-90a8-9bf6f563419a)
+
+### 시연영상
+https://github.com/nanaball/TicketReservation/assets/145513701/2fd27d7a-f6f4-4c0d-8a38-728425552f0e
 
 #### 참고 레퍼런스 
 

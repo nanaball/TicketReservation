@@ -44,6 +44,9 @@ Java와 javafx를 통해 뮤지컬 티켓 예매 프로그램 구현
 <HR/>
 <BR/>
 
+### 스토리보드 
+
+
 #### 참고 레퍼런스 
 
 - [인터파크 티켓](https://tickets.interpark.com/contents/genre/musical)
@@ -51,6 +54,7 @@ Java와 javafx를 통해 뮤지컬 티켓 예매 프로그램 구현
 - [티켓링크](https://www.ticketlink.co.kr/home)
 - [멜론티켓](https://ticket.melon.com/concert/index.htm?genreType=GENRE_ART)
 
+[참조1](https://hey79.tistory.com/166) /  [참조2](https://github.com/daheewoo/calendar_javaFx/commit/dc5c358d2ebec01f73076b08f968bb713a71d746) / 
 <BR/>
 <HR/>
 

@@ -38,7 +38,7 @@ Java와 javafx를 통해 뮤지컬 티켓 예매 프로그램 구현
 - 240102 : 해당 주제 상세 분석 및 팀원별 파트분류
 - 240103-240106 : 화면 및 기능구현(메인화면, 달력기능)
 - 240104 : client, server 구축
-- 240105 : DB연결
+- 240105 : DB연결, GIT REPOSITORY 생성
 - 240106-240108 : 통합 및 추가기능 제작
 - 240109-240111 : 오류 수정 및 구현 마무리
 - 240111-240112 : 배포프로그램 제작 PPT제작 
@@ -53,8 +53,10 @@ Java와 javafx를 통해 뮤지컬 티켓 예매 프로그램 구현
 ### 데이터베이스
 ![그림2](https://github.com/nanaball/TicketReservation/assets/145513701/94005439-2576-44d5-90a8-9bf6f563419a)
 
+<!--
 ### 시연영상
 https://github.com/nanaball/TicketReservation/assets/145513701/2fd27d7a-f6f4-4c0d-8a38-728425552f0e
+-->
 
 #### 참고 레퍼런스 
 

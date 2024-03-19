@@ -22,7 +22,7 @@ Java와 javafx를 통해 뮤지컬 티켓 예매 프로그램 구현
     <td> <a href="https://github.com/nanaball/TicketReservation">엄수연</a></td>
     <td> <a href="https://github.com/qwerdf1133/ticket-project-fork">박종현</a> </td>
     <td> <a href="https://github.com/jinseong-1/ticket">박진성</a> </td>
-    <td> <a href="#">정애란</a> </td>
+    <td> <a href="https://github.com/jeongaeran/TicketReservation.git">정애란</a> </td>
   </tr>
   <tr>
     <td>메인화면/예매내역</td><td>결제/예매확인</td><td>좌석선택</td><td>로그인/회원가입</td>
